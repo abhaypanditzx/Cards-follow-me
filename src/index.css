@@ -1,19 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.animation{
-    animation: ani 2s  linear;
-}
-@keyframes ani {
-    from{width: 0%;}
-    to{width: 100%;}
-}
-progress::-webkit-progress-value { background: purple; }
-
-
-.slider-img{
+.shine {
     width: 100%;
-    height: 500px;
-    object-fit: cover
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.533) 0%,
+      rgba(255, 255, 255, 0.384) 30%,
+      rgba(255, 255, 255, 0.222) 50%,
+      rgba(255, 255, 255, 0.105) 70%,
+      rgba(255, 255, 255, 0.427) 100%
+    );
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    transform: rotate(30deg);
+    opacity: 0;
+    animation: shine-animation 3s infinite;
+  }
+@keyframes shine-animation {
+    0% {
+      left: -50%;
+      opacity: 0;
     }
+    50% {
+      left: 150%;
+      opacity: 1;
+    }
+    100% {
+      left: 150%;
+      opacity: 0;
+    }
+  }
+.gradient{
+    background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,0.47951680672268904) 0%, rgba(89,89,89,0.5075280112044818) 100%);
+}
+
